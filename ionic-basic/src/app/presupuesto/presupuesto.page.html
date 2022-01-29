@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+      <ion-title>
+          Presupuesto
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+      <ion-toolbar>
+          <ion-title size="large">Presupuesto</ion-title>
+      </ion-toolbar>
+  </ion-header>
+  <ion-list>
+      <ion-list-header>
+          <ion-label>
+              Tipo de astos y monto
+          </ion-label>
+      </ion-list-header>
+      <ion-item>
+          <ion-label>Gastos</ion-label>
+          <ion-select [(ngModel)]="selectedValue" multiple="false" (ionChange)="cambioValor(selectedValue)">
+              <ion-select-option [value]="option" *ngFor="let option of  gastos">{{option}}
+              </ion-select-option>
+          </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-label>
+              Monto:
+          </ion-label>
+          <ion-input type="number" [(ngModel)]="monto" placeholder="Ingrese el monto"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-button type="button" (click)="guardar()">Guardar</ion-button>
+      </ion-item>
+      <ion-item>
+          <ion-label>Resultados</ion-label>
+          <ion-textarea color="{{errResultados}}" [(ngModel)]="resultados" clearOnEdit="true" readonly="true"></ion-textarea>
+      </ion-item>
+  </ion-list>
+</ion-content>
