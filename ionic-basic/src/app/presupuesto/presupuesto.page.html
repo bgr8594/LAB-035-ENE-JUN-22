@@ -32,6 +32,12 @@
           <ion-input type="number" [(ngModel)]="monto" placeholder="Ingrese el monto"></ion-input>
       </ion-item>
       <ion-item>
+        <ion-label>
+            Descripci&oacute;n:
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="descripcion" placeholder="Ingrese la descripcion"></ion-input>
+    </ion-item>
+      <ion-item>
           <ion-button type="button" (click)="guardar()">Guardar</ion-button>
       </ion-item>
       <ion-item>
@@ -39,4 +45,28 @@
           <ion-textarea color="{{errResultados}}" [(ngModel)]="resultados" clearOnEdit="true" readonly="true"></ion-textarea>
       </ion-item>
   </ion-list>
+  <ion-grid *ngIf="gasotsList.length>0">
+    <ion-row>
+        <ion-col size="1">id</ion-col>
+        <ion-col size="5">Descripcion</ion-col>
+        <ion-col size="2">Monto</ion-col>
+        <ion-col size="3">Tipo</ion-col>
+        <ion-col size="1"></ion-col>
+    </ion-row>
+    <ion-row *ngFor="let gasto of gasotsList">
+        <ion-col size="1">
+            {{gasto.id}}
+        </ion-col>
+        <ion-col size="5">
+            {{gasto.descripcion}}
+        </ion-col>
+        <ion-col size="2">
+            {{gasto.monto}}
+        </ion-col>
+        <ion-col size="3">
+            {{gasto.tipo}}
+        </ion-col>
+        <ion-col size="1" (click)="borrarGasto(gasto.id)">X</ion-col>
+    </ion-row>
+</ion-grid>
 </ion-content>
