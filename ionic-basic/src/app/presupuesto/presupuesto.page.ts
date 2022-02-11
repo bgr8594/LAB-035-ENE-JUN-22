@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Gasto } from '../models/gastos.model';
+import { GastosService } from '../services/gastos.service';
 
 @Component({
   selector: 'app-presupuesto',
@@ -13,7 +15,11 @@ export class PresupuestoPage implements OnInit {
   public resultados: string;
   public errResultados: string='light';
 
-  constructor() {
+  public gasotsList: Gasto[]=[];
+  public descripcion: string;
+  public tipoGasto: string='';
+
+  constructor(private gastosService: GastosService) {
     
   }
   
@@ -38,6 +44,10 @@ export class PresupuestoPage implements OnInit {
     }
   }
 
+  borrarGasto(idGasto: number){
+    this.gastosService.BorrarGasto(idGasto);
+    this.gasotsList = this.gastosService.getGastos();
+  }
   ngOnInit() {
   }
 
