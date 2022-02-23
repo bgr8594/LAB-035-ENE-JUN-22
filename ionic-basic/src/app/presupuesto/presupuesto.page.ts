@@ -24,7 +24,7 @@ export class PresupuestoPage implements OnInit {
    }
 
    customPopoverOptions: any = {
-    header: 'Seleccion de gasots',
+    header: 'Seleccion de gastoa',
     subHeader: 'Seleccione el tipo de gasto',
     message: 'Solo seleccione un tipo de gasto'
   };

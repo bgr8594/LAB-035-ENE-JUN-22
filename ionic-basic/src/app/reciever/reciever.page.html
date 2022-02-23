@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>reciever</ion-title>
+  </ion-toolbar>
+  <ion-back-button defaultHref="inicio"></ion-back-button>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+      <ion-row *ngFor="let user of personajes">
+        <ion-col size="8">Nombre:{{user.name}}</ion-col>
+        <ion-col size="8">Nacimiento:{{user.birth_year}}</ion-col>
+        <ion-col size="12">Creado:{{user.created}}</ion-col>
+        <ion-col size="12">Editado:{{user.edited}}</ion-col>
+        <ion-col size="8">Ojos:{{user.eye_color}}</ion-col>
+        <ion-col size="12">Films:{{user.films}}</ion-col>
+        <ion-col size="8">Genero:{{user.gender}}</ion-col>
+        <ion-col size="8">Pelo:{{user.hair_color}}</ion-col>
+        <ion-col size="8">Altura:{{user.height}}</ion-col>
+        <ion-col size="12">HWorld:{{user.homeworld}}</ion-col>
+        <ion-col size="8">Masa:{{user.mass}}</ion-col>
+        <ion-col size="8">Tez:{{user.skin_color}}</ion-col>
+        <ion-col size="8">Especies:{{user.species}}</ion-col>
+        <ion-col size="12">Naves:{{user.starships}}</ion-col>
+        <ion-col size="12">URL:{{user.url}}</ion-col>
+        <ion-col size="12">veiculos:{{user.vehicles}}</ion-col>
+      </ion-row>
+  </ion-grid> 
+</ion-content>
