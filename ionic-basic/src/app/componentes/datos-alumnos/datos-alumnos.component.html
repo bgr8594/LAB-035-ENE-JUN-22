@@ -1,0 +1,18 @@
+<ion-grid *ngIf="alumnosList.length>0">
+  <ion-row>
+      <ion-col size="4">Matricula</ion-col>
+      <ion-col size="4">Nombre</ion-col>
+      <ion-col size="2"></ion-col>
+      <ion-col size="2"></ion-col>
+  </ion-row>
+  <ion-row *ngFor="let alumno of alumnosList">
+      <ion-col size="4">
+          {{alumno.matricula}}
+      </ion-col>
+      <ion-col size="4">
+          {{alumno.nombre}}
+      </ion-col>
+      <ion-col size="3" (click)="editar.emit(alumno)"><a>Editar</a></ion-col>
+      <ion-col size="1" (click)="eliminar.emit(alumno.id)"><a>X</a></ion-col>
+  </ion-row>
+</ion-grid>

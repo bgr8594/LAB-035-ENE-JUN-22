@@ -20,7 +20,7 @@ export class GastosService {
   }
 
   borrarGasto(idGasto: number){
-    this.gastos = 
+    this.gastos =
     this.gastos.filter((gasto)=>gasto.id!=idGasto);
   }
 
