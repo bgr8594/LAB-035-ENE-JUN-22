@@ -9,60 +9,64 @@ export class RecetasService {
   recetas: Receta[]=[
     {
       id: 1, 
-      nombre: 'Pizza', 
-      image: 'https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2017/04/pizzapepperoni0.jpg',
-      ingredientes: ["queso","salsa", "peperoni", "harina", "especies","sal"]
+      nombre: 'Onigiri de salmon', 
+      image: 'https://s1.eestatic.com/2017/05/02/cocinillas/cocinillas_212990784_135196757_1706x960.jpg',
+      ingredientes: ["2 vasos de arroz de grano corto especial para sushi",
+      "450 ml de agua", 
+      "salmon", "alga nori"]
     },
     {
       id: 2, 
-      nombre: 'Chop suey de pollo', 
-      image: 'https://images.aws.nestle.recipes/resized/b87c22a3bd854277162d8389432399f8_chop_suey_400_1200_600.jpg',
-      ingredientes: ['2 Cucharadas de Aceite de ajonjolí',
-      '1/2 Cebolla fileteada',
-      '1 Diente de Ajo picado finamente',
-      '400 Gramos de Pechuga de pollo cortada en cubos',
-      '1 Pimiento morrón rojo cortado en bastones',
-      '1 Taza de Brócoli cocido y cortado en ramilletes pequeños',
-      '1/2 Taza de Apio cortado en medias lunas',
-      '2 Zanahorias cortadas en tiras',
-      '2 Tazas de Germen de soya',
-      '1 Calabaza cortada en tiras',
-      '1 Cucharada de Sal con ajo en polvo',
-      '5 Cucharadas de Salsa de Soya MAGGI']
+      nombre: 'Curry japones con pollo', 
+      image: 'https://i2.wp.com/www.kwanhomsai.com/wp-content/uploads/2020/05/Curry-japone%CC%81s-con-pollo1.jpg?resize=1024%2C683',
+      ingredientes: [
+      '400 g. de contramuslo de pollo',
+      '½ paquete de curry japonés',
+      '2 hojas de laurel (opcional)',
+      '1 cebolla mediana',
+      '2 patatas medianas (unos 400 g.)',
+      '2 zanahorias ( unos 250 g.)',
+      '2 dientes de ajo',
+      '4 rodajitas de jengibre',
+      '½ cucharadita de sal',
+      '½ cucharadita de pimienta negra',
+      'Agua (hasta que cubra el pollo)',
+      'Aceite vegetal']
     },
     {
       id: 3, 
-      nombre: 'Pollo a la mexicana', 
-      image: 'https://d1uz88p17r663j.cloudfront.net/resized/08d45a55fe49e611abde012a9b72d8bb_POLLO_A_LA_MEXICANA_150_1200_600.jpg',
+      nombre: 'Ramen miso', 
+      image: 'https://ramenrecetas.com/img/ramen-miso-432.jpg',
       ingredientes: [
-        '1/2 Cebolla asada'
-,'2 Dientes de Ajo asados'
-,'4 Jitomates asados'
-,'1/2 Taza de Agua'
-,'2 Cubos de Concentrado de Tomate con Pollo CONSOMATE'
-,'2 Cucharadas de Aceite de maíz'
-,'1/2 Cebolla fileteada'
-,'5 Muslos o piernas de pollo cocidos'
-,'3 Jitomates cortados en cubos pequeños'
-,'2 Chiles jalapeño cortados en tiras'
-,'2 Ramitas de Cilantro fresco desinfectadas y picadas finamente'
+        '4 huevos'
+,'1 taza de brotes de soja'
+,'280 gr de fideos ramen secos'
+,'1/2 taza de brotes de bambú rebanados'
+,'1/2 taza de maíz'
+,'Un puñado de hojas de espinacas frescas o congeladas'
+,'2 litros de caldo de verduras'
+,'2 cucharaditas de dashi en polvo o dashi instantáneo'
+,'1 cucharada de salsa de soja, o al gusto'
+,'4 cucharadas de pasta de miso'
+,'1 cebolleta finamente picada'
       ]
     },
     {
       id: 4, 
-      nombre: 'Paletas de fresa con chamoy', 
-      image: 'https://images.aws.nestle.recipes/resized/f1b3167c3cff6274361a3f7a87974be2_paletas_de_fresa_con_chamoy_1200_600.jpg',
+      nombre: 'entomatadas', 
+      image: 'https://assets.unileversolutions.com/recipes-v2/214593.jpg?imwidth=1600',
       ingredientes: [
-        '2 Tazas de Fresas congeladas'
-        ,'1 1/2 Tazas de Agua'
-        ,'1/2 Taza de Azúcar'
-        ,'8 Vasos de plástico (4 oz c/u)'
-        ,'8 Vasos de plástico (1 oz c/u)'
-        ,'8 Palitos de madera para paleta'
-        ,'1/2 Taza de Concentrado de jamaica'
-        ,'4 Cucharadas de Chile con limón en polvo'
-        ,'1 Cucharada de Jugo MAGGI'
-        ,'1/4 Taza de Chamoy líquido'
+        '6 tomates (jitomates) rojos'
+        ,'1/2 cebolla blanca'
+        ,'1/2 taza de agua'
+        ,'1 cucharadita de aceite'
+        ,'2 cubo(s) de 10.5 gramos c/u de Knorr® Tomate'
+        ,'8 tortillas de maíz'
+        ,'4 cucharadas de aceite'
+        ,'400 gramos de pechuga de pollo cocida y deshebrada'
+        ,'1/2 taza de cebolla blanca en aros'
+        ,'4 cucharadas de queso fresco rallado'
+        ,'4 cucharaditas de crema'
 
       ]
     }
