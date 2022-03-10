@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalle Receta</ion-title>
+    <ion-back-button defaulthref="receta"></ion-back-button>
+    <ion-title>{{receta.nombre}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col>
+      <ion-img [src]="receta.image"></ion-img>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-list>
+        <ion-label>Ingredientes:</ion-label>
+      </ion-list>
+      <ion-list>
+        <ion-item *ngFor="let ingrediente of receta.ingredientes">
+          {{ingrediente}}
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+</ion-content>
