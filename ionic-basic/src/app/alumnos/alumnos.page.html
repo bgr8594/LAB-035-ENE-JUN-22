@@ -1,32 +1,32 @@
 <ion-header>
-  <ion-toolbar>
-      <ion-title>alumnos</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-  <ion-list>
-      <ion-item>
-          <ion-label>
-              Matricula:
-          </ion-label>
-          <ion-input type="text" [(ngModel)]="matricula" placeholder="Ingrese la matricula"></ion-input>
-      </ion-item>
-      <ion-item>
-          <ion-label>
-              Nombre:
-          </ion-label>
-          <ion-input type="text" [(ngModel)]="nombre" placeholder="Ingrese nombre del alumno"></ion-input>
-      </ion-item>
-      <ion-item>
-          <ion-button type="button" (click)="guardar()">{{estado}}</ion-button>
-          <ion-button *ngIf="estado==='actualizar'" type="button" (click)="cancelar()">Cancelar</ion-button>
-          <ion-text *ngIf="error" color="danger">
-              <h6>Debe ingresar nombre y matricula para {{estado}}</h6>
-          </ion-text>
-      </ion-item>
-      <ion-item *ngIf="alumnos.length>0">
-          <app-data-alumno [alumnosList]="alumnos" (eliminar)="eliminar($event)" (editar)="editar($event)"></app-data-alumno>
-      </ion-item>
-  </ion-list>
-</ion-content> 
+    <ion-toolbar>
+        <ion-title>alumnos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-list>
+        <ion-item>
+            <ion-label>
+                Matricula:
+            </ion-label>
+            <ion-input type="text" [(ngModel)]="matricula" placeholder="Ingrese la matricula"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>
+                Nombre:
+            </ion-label>
+            <ion-input type="text" [(ngModel)]="nombre" placeholder="Ingrese nombre del alumno"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-button type="button" (click)="guardar()">{{estado}}</ion-button>
+            <ion-button *ngIf="estado==='actualizar'" type="button" (click)="cancelar()">Cancelar</ion-button>
+            <ion-text *ngIf="error" color="danger">
+                <h6>Debe ingresar nombre y matricula para {{estado}}</h6>
+            </ion-text>
+        </ion-item>
+        <ion-item *ngIf="alumnos.length>0">
+            <app-data-alumno [alumnosList]="alumnos" (eliminar)="eliminar($event)" (editar)="editar($event)"></app-data-alumno>
+        </ion-item>
+    </ion-list>
+  </ion-content> 

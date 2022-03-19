@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { AlumnosPageRoutingModule } from './alumnos-routing.module';
 
 import { AlumnosPage } from './alumnos.page';
-import { DataAlumnoComponent } from '../componentes/datos-alumno/datos-alumno.component';
+import { DataAlumnoComponent } from '../componentes/data-alumno/data-alumno.component';
 
 @NgModule({
   imports: [
