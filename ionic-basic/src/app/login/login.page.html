@@ -1,9 +1,38 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
+  <ion-toolbar color="primary">
+      <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content padding>
+    <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
+  <ion-item>
+      <ion-label>
+          Email
+      </ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+      <ion-text color="danger" *ngIf="hasError('email','email')">
+          <h5>Debe ser un correo valido</h5>
+      </ion-text>
+      <ion-text color="danger" *ngIf="hasError('email','required')">
+          <h5>Campo requerido</h5>
+      </ion-text>
+  </ion-item>
+  <ion-item>
+      <ion-label>
+          Password
+      </ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+            <ion-text color="danger" *ngIf="!ionicForm.valid && ionicForm.controls['password'].touched && !hasError('password','required')">
+                <h5>Maximo 6 caracteres</h5>
+            </ion-text>
+            <ion-text color="danger" *ngIf="hasError('password','required')">
+                <h5>Campo requerido</h5>
+            </ion-text>
+  </ion-item>
+  <ion-item-divider>
+    <ion-button size="larger" type="submit">Login</ion-button>
+    <ion-button size="larger" routerLink="/register">New</ion-button>
+  </ion-item-divider>
+  </form>
 </ion-content>
