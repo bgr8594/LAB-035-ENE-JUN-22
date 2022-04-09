@@ -3,8 +3,8 @@ import { Alumno } from 'src/app/models/alumno.model';
 
 @Component({
   selector: 'app-data-alumno',
-  templateUrl: './data-alumno.component.html',
-  styleUrls: ['./data-alumno.component.scss'],
+  templateUrl: './datos-alumno.component.html',
+  styleUrls: ['./datos-alumno.component.scss'],
 })
 export class DataAlumnoComponent implements OnInit {
 
