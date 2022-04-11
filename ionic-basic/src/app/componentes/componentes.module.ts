@@ -1,4 +1,4 @@
-/*import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FloatMenuComponent } from './float-menu/float-menu.component';
 
@@ -11,4 +11,4 @@ import { FloatMenuComponent } from './float-menu/float-menu.component';
     CommonModule
   ]
 })
-export class ComponentesModule { }*/
+export class ComponentesModule { }
