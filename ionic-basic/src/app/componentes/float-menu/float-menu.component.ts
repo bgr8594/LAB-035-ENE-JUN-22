@@ -45,6 +45,12 @@ export class FloatMenuComponent implements OnInit {
       enlace: '/tabs',
       icono: 'folder-outline'
     }
+    ,
+    {
+      nombre: 'login',
+      enlace: '/login',
+      icono: 'folder-outline'
+    }
   ]
 
   constructor(

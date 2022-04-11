@@ -1,22 +1,22 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    
-    <ion-title>Menu Principal</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-menu side="start" content-id="main">
-  <ion-content id="menuFloat">
-    <ion-list>
-      <ion-menu-toggle *ngFor="let option of datosMenu">
-        <ion-item (click)="navegar(option.enlace)">
-          <ion-icon name="{{option.icono}}"></ion-icon>
-          <ion-label>{{option.nombre}}</ion-label>
-        </ion-item>
-      </ion-menu-toggle>
-    </ion-list>
-  </ion-content>
-</ion-menu>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      
+      <ion-title>Menu Principal</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-menu side="start" content-id="main">
+    <ion-content id="menuFloat">
+      <ion-list>
+        <ion-menu-toggle *ngFor="let option of datosMenu">
+          <ion-item (click)="navegar(option.enlace)">
+            <ion-icon name="{{option.icono}}"></ion-icon>
+            <ion-label>{{option.nombre}}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
