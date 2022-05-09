@@ -4,7 +4,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AuthGuard } from 'src/app/guards/auth.guard';
 import { MenuElement } from 'src/app/models/menu.model';
 import { MenuService } from 'src/app/services/menu.service';
-
+import { AutserviceService } from 'src/app/services/autservice.service';
 @Component({
   selector: 'app-float-menu',
   templateUrl: './float-menu.component.html',
@@ -24,12 +24,21 @@ export class FloatMenuComponent implements OnInit {
   ];
   
   constructor(private router: Router, private authGuard: AuthGuard,
-    private menuService: MenuService,
-    private afAuth: AngularFireAuth) { }
+    private menuService: MenuService, private authSvc: AutserviceService,
+    private afAuth: AngularFireAuth) { 
+      this.authSvc.stateUser().subscribe(res =>{
+        if(res){
+          console.log('log');
+          this.isLoged = true;
+        }else{
+          console.log('no Logeado');
+          this.isLoged = false;
+        }
+      })
+    }
 
   ngOnInit() {
-    this.afAuth.authState.subscribe(user => this.isLoged= user);
-
+    
     this.menuService.$getTitleMenu.subscribe(data=>{
       console.log(data);
       this.titleMenu =data;
@@ -43,6 +52,7 @@ export class FloatMenuComponent implements OnInit {
 
   onMenuOpen(){
     if(this.isLoged){
+
       this.datosMenu =[
         {nombre: 'Alumnos',enlace:'/alumnos',
   icono:'school-outline'},
@@ -63,6 +73,7 @@ export class FloatMenuComponent implements OnInit {
       ];
       
     } else{
+      console.log('no log');
       this.datosMenu =[
         {nombre: 'login',enlace:'/login',
         icono:'log-in-outline'},

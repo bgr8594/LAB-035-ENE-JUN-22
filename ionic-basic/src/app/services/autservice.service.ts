@@ -1,5 +1,4 @@
-import { Injectable } from '@angular/core';
-
+import { Injectable } from '@angular/core'
 import { AngularFireAuth } from 'angularfire2/auth';
 import { User } from '../models/user.model';
 
@@ -31,5 +30,8 @@ export class AutserviceService {
       console.log('Error en register user', error);
 
     }
+  }
+  stateUser(){
+    return this.afAuth.authState;
   }
 }
