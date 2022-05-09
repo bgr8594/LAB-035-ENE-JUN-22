@@ -7,14 +7,13 @@ import { Lugar } from '../models/lugar.model';
 })
 export class LugarService {
 
-  constructor(private dbFirestore: AngularFirestore) {
-
-  }
+  constructor(private dbFirestore: AngularFirestore) { }
 
   altaLugar(lugar: Lugar){
     const lugarTemp: any ={
       nombre:lugar.nombre,
-      ubicacion: {longitud:'', latitud:''}
+      longitud:lugar.latitud, 
+      latitud:lugar.longitud
     };
     return this.dbFirestore.collection('lugar').add(lugarTemp);
   }
@@ -28,6 +27,8 @@ export class LugarService {
         let data: any = doc.data();
         let lugar: Lugar = new Lugar();
         lugar.nombre = data.nombre;
+        lugar.latitud = data.latitud;
+        lugar.longitud = data.longitud;
         console.log(doc.id);
         destinos.push(lugar);
       });
@@ -37,6 +38,7 @@ export class LugarService {
     });
 
   }
+
   getLugaresChanges(){
     return this.dbFirestore.collection('lugar').snapshotChanges();
   }
