@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-title>Destinos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
+      <ion-item>
+          <ion-label>
+              Destino
+          </ion-label>
+          <ion-input type="text" formControlName="nombre"></ion-input>
+          <ion-text color="danger" *ngIf="hasError('nombre','required')">
+              <h5>Campo requerido</h5>
+          </ion-text>
+      </ion-item>
+      <ion-item-divider>
+          <ion-button type="submit" type="submit" [disabled]="!(ionicForm.valid)" color="primary" size="larger">Alta destino</ion-button>
+      </ion-item-divider>
+  </form>
+
+  <ion-item-divider></ion-item-divider>
+  <ion-grid>
+      <ion-row>
+          <ion-col>
+              <ion-text>
+                  Destino
+              </ion-text>
+          </ion-col>
+          <ion-col>
+              <ion-text>
+                  Ubicacion
+              </ion-text>
+          </ion-col>
+      </ion-row>
+      <ion-row *ngFor="let lugar of destinos">
+          <ion-col>
+              <ion-text>
+                  {{lugar.nombre}}
+              </ion-text>
+          </ion-col>
+          <ion-col>
+              <ion-text>
+                  En construccion<!--{{lugar.ubicacion}}-->
+              </ion-text>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-content>

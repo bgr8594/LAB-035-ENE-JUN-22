@@ -40,7 +40,9 @@ export class LoginPage implements OnInit {
     const user = await this.authService.onLogin(this.user);
     if (user!=null && user.code == undefined) {
       console.log('Successfully logged in!');
-      this.router.navigateByUrl('/home');
+      setTimeout(() => {
+        this.router.navigate(['/home']);
+      }, 650);
     } else {
       if(user.code){
         if(user.code == 'auth/wrong-password' || user.code == 'auth/invalid-email' || user.code == 'auth/argument-error'){
