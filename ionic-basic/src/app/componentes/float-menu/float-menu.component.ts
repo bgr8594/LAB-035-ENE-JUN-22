@@ -5,6 +5,7 @@ import { AuthGuard } from 'src/app/guards/auth.guard';
 import { MenuElement } from 'src/app/models/menu.model';
 import { MenuService } from 'src/app/services/menu.service';
 import { AutserviceService } from 'src/app/services/autservice.service';
+
 @Component({
   selector: 'app-float-menu',
   templateUrl: './float-menu.component.html',
@@ -62,10 +63,12 @@ export class FloatMenuComponent implements OnInit {
     icono:'cash-outline'},
     {nombre: 'inicio',enlace:'/inicio',
     icono:'navigate-outline'},
+    {nombre: 'Turismo firebase',enlace:'/destinos',
+    icono:'airplane'},
+    {nombre: 'Turismo api',enlace:'destinos-api',
+    icono:'airplane'},
     {nombre: 'Tabs',enlace:'/tabs',
     icono:'folder-outline'},
-    {nombre: 'Turismo',enlace:'/destinos',
-    icono:'airplane'},
     {nombre: 'login',enlace:'/login',
     icono:'log-in-outline'},
         {nombre: 'logout',enlace:'/home',
