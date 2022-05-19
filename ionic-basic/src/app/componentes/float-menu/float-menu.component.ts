@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { Menu } from './../../models/menu.model';
+import { MenuElement } from './../../models/menu.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FloatMenuComponent implements OnInit {
 
-  datosMenu: Menu[] = [
+  datosMenu: MenuElement[] = [
     {
       nombre: 'Home',
       enlace: '/home',
@@ -50,6 +50,12 @@ export class FloatMenuComponent implements OnInit {
       nombre: 'login',
       enlace: '/login',
       icono: 'folder-outline'
+    }
+    ,
+    {
+      nombre: 'Turismo',
+      enlace:'/destinos',
+      icono:'airplane'
     }
   ]
 
