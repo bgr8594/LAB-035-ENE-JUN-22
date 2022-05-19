@@ -5,17 +5,15 @@ import { Lugar } from '../models/lugar.model';
   providedIn: 'root'
 })
 export class LugarService {
-  constructor(private dbFirestore: AngularFirestore) {
-  }
-  
+  constructor(private dbFirestore: AngularFirestore) { }
   altaLugar(lugar: Lugar){
     const lugarTemp: any ={
       nombre:lugar.nombre,
-      ubicacion: {longitud:'', latitud:''}
+      longitud:lugar.latitud, 
+      latitud:lugar.longitud
     };
     return this.dbFirestore.collection('lugar').add(lugarTemp);
   }
-
   async getLugares(destinos: Lugar[]){
     const lugares = this.dbFirestore.collection('lugar');
     const snapshot = await lugares.get().toPromise().
@@ -32,17 +30,13 @@ export class LugarService {
     catch(err=>{
       console.log(err);
     });
-
   }
-
   getLugaresChanges(){
     return this.dbFirestore.collection('lugar').snapshotChanges();
   }
-
   updateLugares(id: any, lugar: any){
    return this.dbFirestore.collection('lugar').doc(id).update(lugar);
   }
-
   deleteLugar(id: any){
     return this.dbFirestore.collection('lugar').doc(id).delete();
   }
