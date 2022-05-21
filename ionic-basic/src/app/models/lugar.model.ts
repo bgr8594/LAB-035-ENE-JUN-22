@@ -2,11 +2,12 @@ export class Lugar {
     nombre: string;
     id?: string;
     ubicacion?:{latitud:string, longitud:string}
+    latitud:number; 
+    longitud:number;
 
 
 
         constructor(){
-
             this.nombre=''
 
         }
@@ -18,4 +19,4 @@ export class Lugar {
             this.ubicacion.longitud = Longiutd;
 
         }
-    }
+    } 

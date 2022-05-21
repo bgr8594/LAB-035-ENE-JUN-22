@@ -12,32 +12,36 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'presupuesto',canActivate:[AuthGuard],
+    path: 'presupuesto', canActivate:[AuthGuard],
     loadChildren: () => import('./presupuesto/presupuesto.module').then( m => m.PresupuestoPageModule)
   },
   {
-    path: 'alumnos',canActivate:[AuthGuard],
+    path: 'alumnos', canActivate:[AuthGuard],
     loadChildren: () => import('./alumnos/alumnos.module').then( m => m.AlumnosPageModule)
   },
   {
-    path: 'inicio',canActivate:[AuthGuard],
+    path: 'inicio', canActivate:[AuthGuard],
     loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
   },
   {
-    path: 'reciever',canActivate:[AuthGuard],
+    path: 'reciever', canActivate:[AuthGuard],
     loadChildren: () => import('./reciever/reciever.module').then( m => m.RecieverPageModule)
   },
   {
-    path: 'receta',canActivate:[AuthGuard],
+    path: 'receta', canActivate:[AuthGuard],
     loadChildren: () => import('./receta/receta.module').then( m => m.RecetaPageModule)
   },
   {
-    path: 'detalle-receta',canActivate:[AuthGuard],
+    path: 'detalle-receta', canActivate:[AuthGuard],
     loadChildren: () => import('./detalle-receta/detalle-receta.module').then( m => m.DetalleRecetaPageModule)
   },
   {
-    path: 'tabs',canActivate:[AuthGuard],
+    path: 'tabs', canActivate:[AuthGuard],
     loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
+  },
+  {
+    path: 'admin', canActivate:[AuthGuard],
+    loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
   },
   {
     path: 'register',
@@ -48,15 +52,17 @@ const routes: Routes = [
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'admin',canActivate:[AuthGuard],
-    loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
-  },
-  {
     path: 'destinos', canActivate:[AuthGuard],
     loadChildren: () => import('./destinos/destinos.module').then( m => m.DestinosPageModule)
   },
-];
+  {
+    path: 'destinos-api', canActivate:[AuthGuard],
+    loadChildren: () => import('./destinos-api/destinos-api.module').then( m => m.DestinosApiPageModule)
+  },
 
+
+
+];
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
