@@ -90,6 +90,8 @@ export class FloatMenuComponent implements OnInit {
     icono:'restaurant-outline'},
     {nombre: 'inicio',enlace:'/inicio',
     icono:'navigate-outline'},
+    {nombre: 'Turismo firebase',enlace:'/destinos',
+    icono:'airplane'},
     {nombre: 'Tabs',enlace:'/tabs',
     icono:'folder-outline'},
     {nombre: 'Turismo',enlace:'/destinos',
