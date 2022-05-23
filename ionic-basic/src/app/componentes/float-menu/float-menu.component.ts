@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AuthGuard } from 'src/app/guards/auth.guard';
-import { MenuElement } from 'src/app/models/menu.model';
+import { MenuElement } from 'src/app/models/menu.models';
 import { MenuService } from 'src/app/services/menu.service';
 
 @Component({

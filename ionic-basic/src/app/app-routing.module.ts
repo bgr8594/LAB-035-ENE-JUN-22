@@ -56,18 +56,6 @@ const routes: Routes = [
     path: 'destinos', canActivate:[AuthGuard],
     loadChildren: () => import('./destinos/destinos.module').then( m => m.DestinosPageModule)
   },
-  {
-    path: 'destinos-api',
-    loadChildren: () => import('./destinos-api/destinos-api.module').then( m => m.DestinosApiPageModule)
-  },
-  {
-    path: 'googlemaps',
-    loadChildren: () => import('./googlemaps/googlemaps.module').then( m => m.GooglemapsPageModule)
-  },
-  {
-    path: 'themes',
-    loadChildren: () => import('./themes/themes.module').then( m => m.ThemesPageModule)
-  },
 ];
 
 @NgModule({
