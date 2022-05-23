@@ -15,6 +15,14 @@
               <h5>Campo requerido</h5>
           </ion-text>
       </ion-item>
+      <ion-item (click)="addDirection()">
+          <ion-label class="normal">Ubicación</ion-label>
+          <ion-buttons>
+              <ion-button>
+                  <ion-icon slot="icon-only" color="danger" name="location"></ion-icon>
+              </ion-button>
+          </ion-buttons>
+      </ion-item>
       <ion-item-divider>
           <ion-button type="submit" type="submit" [disabled]="!(ionicForm.valid)" color="primary" size="larger">{{estado}}</ion-button>
           <ion-button *ngIf="editando" type="button" color="danger" size="larger" (click)="cancelarEdicion()">Cancelar</ion-button>
@@ -48,8 +56,10 @@
               </ion-text>
           </ion-col>
           <ion-col>
-              <ion-text>
-                  {{lugar.ubicacion}}
+              <ion-text *ngIf="lugar.latitud">
+                  latitud: {{lugar.latitud}} ,longitud{{lugar.longitud}}
+              </ion-text>
+              <ion-text *ngIf="!lugar.latitud">
               </ion-text>
           </ion-col>
           <ion-col>
