@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ionic-basic</string>
+    <string name="title_activity_main">ionic-basic</string>
+    <string name="package_name">com.democapacitor.fcfm</string>
+    <string name="custom_url_scheme">com.democapacitor.fcfm</string>
+</resources>

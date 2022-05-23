@@ -1,5 +1,7 @@
 {
   "name": "ionic-basic",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
