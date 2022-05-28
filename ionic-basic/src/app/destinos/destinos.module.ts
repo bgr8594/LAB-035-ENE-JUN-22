@@ -18,3 +18,4 @@ import { DestinosPage } from './destinos.page';
   declarations: [DestinosPage]
 })
 export class DestinosPageModule {}
+///...
