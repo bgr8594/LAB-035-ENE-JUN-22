@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Lugar } from '../models/lugar.model';
 import { LugarService } from '../services/lugar.service';
 import {FormGroup, FormBuilder, Validators, FormControl} from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 import { GooglemapsComponent } from '../googlemaps/googlemaps.component';
+import { Lugar } from '../models/lugar.models';
 
 @Component({
   selector: 'app-destinos',
@@ -152,3 +152,4 @@ export class DestinosPage implements OnInit {
     }
   }
 }
+///...

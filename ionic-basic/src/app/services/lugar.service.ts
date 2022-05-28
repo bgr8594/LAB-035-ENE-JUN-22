@@ -51,3 +51,4 @@ export class LugarService {
     return this.dbFirestore.collection('lugar').doc(id).delete();
   }
 }
+///...
