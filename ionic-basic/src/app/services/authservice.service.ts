@@ -1,5 +1,5 @@
-import { AngularFireAuth } from 'angularfire2/auth';
 import { Injectable } from '@angular/core';
+import { AngularFireAuth } from 'angularfire2/auth';
 import { User } from '../models/user.model';
 
 @Injectable({
@@ -7,30 +7,28 @@ import { User } from '../models/user.model';
 })
 export class AuthserviceService {
 
-  public isLoged: any = false;
-
-  constructor(private afAuth: AngularFireAuth) {
-    this.afAuth.authState.subscribe(user => (this.isLoged = user));
+  public isLoged : any = false;
+  constructor(private afAuth: AngularFireAuth) { 
+    afAuth.authState.subscribe(user => this.isLoged= user);
   }
-
-  //Login
-  async onLogin(user: User) {
-    try {
+  async onLogin(user: User){
+    try{
       return await this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
-    } catch (e) {
-      console.log('Error en el Login de User',e);
-      return e;
+    }
+    catch(error){
+      console.log('Error en login user', error);
+      return error;
     }
   }
 
-  //onRegister
-  async onRegister(user: User) {
-    try {
+  //register
+  async onRegister(user: User){
+    try{
       return await this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
-    } catch (e) {
-      console.log('Error en el Registro de User',e);
-      return e;
+    }
+    catch(error){
+      console.log('Error en register user', error);
+
     }
   }
-
 }
