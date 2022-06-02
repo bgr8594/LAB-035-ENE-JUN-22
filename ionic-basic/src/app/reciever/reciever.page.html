@@ -1,0 +1,97 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>reciever</ion-title>
+    </ion-toolbar>
+    <ion-back-button defaultHref="inicio"></ion-back-button>
+  </ion-header>
+  
+  <ion-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          User
+        </ion-col>
+        <ion-col>
+          Uuid
+        </ion-col>
+        <ion-col>
+          Email
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          {{user.nombre}}
+        </ion-col>
+        <ion-col>
+          {{user.uuid}}
+        </ion-col>
+        <ion-col>
+          {{user.email}}
+        </ion-col>    
+      </ion-row>
+    </ion-grid>
+  
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          User
+        </ion-col>
+        <ion-col>
+          Uuid
+        </ion-col>
+        <ion-col>
+          Email
+        </ion-col>
+      </ion-row>
+      <ion-row *ngFor="let lista of list">
+        <ion-col>
+          {{lista.nombre}}
+        </ion-col>
+        <ion-col>
+          {{lista.uuid}}
+        </ion-col>
+        <ion-col>
+          {{lista.email}}
+        </ion-col>    
+      </ion-row>
+    </ion-grid>
+  
+    <ion-grid>
+      <ion-row>
+        <ion-col>Name</ion-col>
+        <ion-col>Height</ion-col>
+        <ion-col>Mass</ion-col>
+        <ion-col>Hair Color</ion-col>
+        <ion-col>Skin Color</ion-col>
+        <ion-col>Eye Color</ion-col>
+        <ion-col>Birth Year</ion-col>
+        <ion-col>Gender</ion-col>
+        <ion-col>HomeWorld</ion-col>
+        <ion-col>Films</ion-col>
+        <ion-col>Species</ion-col>
+        <ion-col>Vehicles</ion-col>
+        <ion-col>Starships</ion-col>
+        <ion-col>Created</ion-col>
+        <ion-col>Edited</ion-col>
+        <ion-col>Url</ion-col>
+      </ion-row>
+      <ion-row *ngFor="let person of personajes">
+        <ion-col>{{person.name}}</ion-col>
+        <ion-col>{{person.height}}</ion-col>
+        <ion-col>{{person.mass}}</ion-col>
+        <ion-col>{{person.hair_color}}</ion-col>
+        <ion-col>{{person.skin_color}}</ion-col>
+        <ion-col>{{person.eye_color}}</ion-col>
+        <ion-col>{{person.birth_year}}</ion-col>
+        <ion-col>{{person.gender}}</ion-col>
+        <ion-col>{{person.homeworld}}</ion-col>
+        <ion-col>{{person.films}}</ion-col>
+        <ion-col>{{person.species}}</ion-col>
+        <ion-col>{{person.vehicles}}</ion-col>
+        <ion-col>{{person.starships}}</ion-col>
+        <ion-col>{{person.created}}</ion-col>
+        <ion-col>{{person.edited}}</ion-col>
+        <ion-col>{{person.url}}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
