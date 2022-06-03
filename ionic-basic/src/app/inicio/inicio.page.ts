@@ -26,7 +26,6 @@ export class InicioPage implements OnInit {
   gotReceiver(){
     this.serviceC.sendObjectSource(this.user);
     this.serviceC.sendListSource(this.list);
-
     this.router.navigate(['/reciever']);
   }
 

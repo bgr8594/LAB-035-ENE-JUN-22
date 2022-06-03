@@ -26,7 +26,7 @@ export class RecetasService {
     {
       id : 2,
       nombre : "Carne de puerco en mole",
-      image : "https://recetas-mexicanas.com.mx/wp-content/uploads/2014/07/carne-puerco-mole-900x648.jpgS.webp",
+      image : "https://recetas-mexicanas.com.mx/wp-content/uploads/2014/07/carne-puerco-mole-900x648.jpg",
       ingredientes : [
         "1/2 Kilogramo de carne de puerco",
         "2 Dientes de ajo pelados",
@@ -40,7 +40,7 @@ export class RecetasService {
     {
       id : 3,
       nombre : "Postre Spam Musubi",
-      image : "https://i1.wp.com/golososdelmundo.com/wp-content/uploads/2016/06/spam_musubi.jpg.webp",
+      image : "https://i1.wp.com/golososdelmundo.com/wp-content/uploads/2016/06/spam_musubi.jpg",
       ingredientes : [
         "1/2 taza de salsa de soja",
         "2 cucharadas de mirin (vino de arroz)",
