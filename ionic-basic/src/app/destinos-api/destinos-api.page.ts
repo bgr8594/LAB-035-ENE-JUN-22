@@ -138,8 +138,8 @@ export class DestinosApiPage implements OnInit {
   }
   async addDirection(){
     let positionInput: any = {
-      lat: -2.898116,
-      lng: -78.99958149999999
+      lat:  25.7271187568348,
+      lng:  -100.31456737201803
     };
     if(this.latitud !== null){
       positionInput.lat = this.latitud;
