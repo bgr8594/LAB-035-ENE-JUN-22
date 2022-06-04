@@ -4,8 +4,8 @@ import { AuthserviceService } from '../services/authservice.service';
 import { ModalErrorComponent } from '../componentes/modal-error/modal-error.component';
 import { ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
-import {FormGroup, FormBuilder, Validators, FormControl, AbstractControl} from '@angular/forms';
 
+import {FormGroup, FormBuilder, Validators, FormControl, AbstractControl} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
