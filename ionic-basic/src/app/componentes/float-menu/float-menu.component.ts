@@ -1,6 +1,9 @@
 import { Router } from '@angular/router';
 import { Menu } from '../../models/menu.model';
 import { Component, OnInit } from '@angular/core';
+import { AuthGuard } from './../../guards/auth.guard';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
   selector: 'app-float-menu',
@@ -10,51 +13,59 @@ import { Component, OnInit } from '@angular/core';
 export class FloatMenuComponent implements OnInit {
 
   datosMenu: Menu[] = [
-    {
-      nombre: 'Home',
-      enlace: '/home',
-      icono: 'home-outline'
-    }
-    ,
-    {
-      nombre: 'Alumnos',
-      enlace: '/alumnos',
-      icono: 'school-outline'
-    }
-    ,
-    {
-      nombre: 'Recetas',
-      enlace: '/receta',
-      icono: 'restaurant-outline'
-    }
-    ,
-    {
-      nombre: 'Presupuesto',
-      enlace: '/presupuesto',
-      icono: 'cash-outline'
-    }
-    ,
-    {
-      nombre: 'Inicio',
-      enlace: '/inicio',
-      icono: 'navigate-outline'
-    }
-    ,
-    {
-      nombre: 'Tabs',
-      enlace: '/tabs',
-      icono: 'folder-outline'
-    }
+    {nombre: 'login',enlace:'/login',
+    icono:'log-in-outline'},
+    {nombre: 'logout',enlace:'/home',
+    icono:'log-out-outline'}
   ]
 
   constructor(
-    private router: Router
+    private router: Router,
+    private authGuard: AuthGuard,
+    private menuService: MenuService,
+    private afAuth: AngularFireAuth
   ) { }
 
-  ngOnInit() {}
+  titleMenu: string = 'Home';
+  public isLoged: any = false;
+  ngOnInit() {
+    this.afAuth.authState.subscribe(user => this.isLoged= user);
+    this.menuService.$getTitleMenu.subscribe(data=>{
+      console.log(data);
+      this.titleMenu =data;
+    });
 
-  navegar(link: string){
+  }
+
+  navegar(link: string, titleMenu: string){
+    this.titleMenu = titleMenu;
     this.router.navigate([link]);
+  }
+  onMenuOpen(){
+    if(this.isLoged){
+      this.datosMenu =[
+        {nombre: 'Alumnos',enlace:'/alumnos',
+  icono:'school-outline'},
+    {nombre: 'Receteas',enlace:'/receta',
+    icono:'restaurant-outline'},
+    {nombre: 'inicio',enlace:'/inicio',
+    icono:'navigate-outline'},
+    {nombre: 'Tabs',enlace:'/tabs',
+    icono:'folder-outline'},
+    {nombre: 'login',enlace:'/login',
+    icono:'log-in-outline'},
+        {nombre: 'logout',enlace:'/home',
+        icono:'log-out-outline'}
+      ];
+
+    } else{
+      this.datosMenu =[
+        {nombre: 'login',enlace:'/login',
+        icono:'log-in-outline'},
+        {nombre: 'logout',enlace:'/home',
+        icono:'log-out-outline'}
+      ];
+    }
   }
 
 }
