@@ -54,8 +54,10 @@ export class FloatMenuComponent implements OnInit {
     icono:'folder-outline'},
     {nombre: 'login',enlace:'/login',
     icono:'log-in-outline'},
-        {nombre: 'logout',enlace:'/home',
-        icono:'log-out-outline'}
+    {nombre: 'Turismo',enlace:'/destinos',
+    icono:'airplane'},
+    {nombre: 'logout',enlace:'/home',
+    icono:'log-out-outline'}
       ];
 
     } else{
